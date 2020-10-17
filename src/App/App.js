@@ -10,7 +10,7 @@ let App = (props) => {
         <>
             <div className={style.header}>
                 <Header name={props.name}/>
-                <Profile fullLame={props.fullLame}
+                <Profile fullName={props.fullName}
                          editorProfile={props.editorProfile}
                          option={props.option}
                 />

@@ -10,7 +10,6 @@
     border-radius: 10px;
     display: flex;
 }
-
 .userImages {
     position: absolute;
     width: 80px;
@@ -18,10 +17,9 @@
     left: 30px;
     top: 24px;
 }
-
 .userName {
     position: absolute;
-    width: 519px;
+    width: 619px;
     height: 41px;
     left: 152px;
     top: 15px;
@@ -33,9 +31,8 @@
     color: #FFFFFF;
 }
 .edit p {
-        margin-top: 5px;
+        margin-top: 9px;
 }
-
 .edit button {
     position: absolute;
     width: 119px;
@@ -51,7 +48,6 @@
     cursor: pointer;
     color: #FFFFFF;
 }
-
 .context {
     position: absolute;
     width: 181px;
@@ -81,29 +77,23 @@
 
 
 }
-
 @media screen and (max-width: 600px) {
-
     .profile {
         width: 300px;
         height: 71px;
         left: 10px;
         top: 113px;
-
     }
-
     .userImages {
         width: 40px;
         height: 40px;
         left: 10px;
         top: 16px;
     }
-
     .userImages img {
         width: 40px;
         height: 40px;
     }
-
     .userName {
         width: 196px;
         height: 19px;
@@ -121,14 +111,10 @@
         width: 0px;
         height: 0px;
     }
-
     .edit p {
-        width: 1px;
+        width: 0px;
         display: none;
-
-
     }
-
     .context {
         top: -70px;
         left: 0;
@@ -138,7 +124,6 @@
         font-size: 14px;
         line-height: 19px;
     }
-
     .contextMenu {
         left: 0;
         top: -40px;

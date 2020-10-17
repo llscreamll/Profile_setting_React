@@ -5,6 +5,8 @@
     top: 220px;
     background: white;
     margin-left: 80px;
+    outline: none;
+    margin-top: -300px;
 }
 
 .textModal {
@@ -22,11 +24,11 @@
 @media screen and (max-width: 600px) {
     .modalWindow {
         width: 320px;
-        height: 426px;
-        top: 120px;
+        height: 436px;
+        top: 110px;
         margin-left: 0px;
-        margin-top: 140px;
-        border-radius: 20px 20px 0px 0px;
+        margin-top: 150px;
+        border-radius: 20px 20px 20px 20px;
     }
 
     .textModal {

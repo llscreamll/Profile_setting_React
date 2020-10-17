@@ -59,12 +59,12 @@
     left: 1312px;
     height: 19px;
     right: 49px;
-    top: 15px;
+    top: 20px;
     color: #FFFFFF;
 }
 .noneIcon{
     color: white;
-    left: 1176px;
+    left: 1179px;
     top: 25px;
     position: absolute;
 
@@ -81,6 +81,7 @@
         width: 24px;
         height: 24px;
         left: 286px;
+        top: 22px;
     }
     .LineContainer{
         position: absolute;

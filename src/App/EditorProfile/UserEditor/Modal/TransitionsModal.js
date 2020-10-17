@@ -1,4 +1,5 @@
 import {makeStyles} from '@material-ui/core/styles';
+import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import style from "./style.module.css"
@@ -6,7 +7,6 @@ import CloseIcon from "@material-ui/icons/Close";
 import React  from "react";
 import {Button} from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-import Modal from "@material-ui/core/Modal";
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -49,8 +49,8 @@ function TransitionsModal({open, handleClose, preventDef, setModalSuccess, modal
                             borderRadius: "50px",
                             height: "30px",
                             width: "30px",
-                            marginTop: "24px",
-                            marginRight: "24px"
+                            marginTop: "14px",
+                            marginRight: "5px"
                         }}> <CloseIcon style={{color: "grey"}}/></Button>
                         {modalSuccess ?
                             <Grid

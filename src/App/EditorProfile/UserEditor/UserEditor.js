@@ -9,6 +9,7 @@ import TransitionsModal from "./Modal/TransitionsModal";
 
 const UserEditor = (props) => {
 
+    // в useReducer и отдельный Container
     let [useName, setUseName] = useState("");
     let [useEmail, setUseEmail] = useState("");
     let [usePhone, setUsePhone] = useState("");
@@ -24,21 +25,22 @@ const UserEditor = (props) => {
         setOpen(true);
     };
     // закрытие модального окна
-    const handleClose = (info = false) => {
-
+    const handleClose = () => {
         setOpen(false);
-
         setModalSuccess(true)
-
-        if (successText == "Данные успешно сохранены" || info === true ) {
+        if (successText === "Данные успешно сохранены") {
             props.editorProfile()
         }
     };
     // сохранение данных и отправка на сервер
     const preventDef = (e) => {
         e.preventDefault()
-
-        if (usePhone !== "" && useEmail !== "" && useName !== "") {
+        if (usePhone !== "" &&
+            useEmail !== "" &&
+            useName !== "" &&
+            useNameValidate === true &&
+            useEmailValidate === true &&
+            usePhoneValidate === true) {
             const form = {
                 name: useName,
                 email: useEmail,
@@ -46,13 +48,13 @@ const UserEditor = (props) => {
             };
             props.getFormData(form)
             setSuccessText("Данные успешно сохранены")
+            // автоматическое закрытие модального окна
+            // setTimeout(()=>{
+            //     handleClose(true)
+            // },4000)
 
-            setTimeout(()=>{
-                handleClose(true)
-            },4000)
-            
         } else {
-            setSuccessText("Неправильный ввод данных")
+            setSuccessText("Вы ввели некорректные данные")
         }
     }
 
@@ -72,7 +74,7 @@ const UserEditor = (props) => {
         let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
         let email = e.target.value;
         let valid = reg.test(email);
-        if (valid) {
+        if (valid && email.length <= 40) {
             setUseEmail(e.target.value)
             setUseEmailValidate(true)
         } else {
@@ -80,10 +82,10 @@ const UserEditor = (props) => {
         }
     }
     const validatorName = (e) => {
-        let reg = /^[А-Яа-я]* [А-Яа-я]*$/;
+        let reg = /^([А-ЯA-Z]|[А-ЯA-Z][\x27а-яa-z]{1,}|[А-ЯA-Z][\x27а-яa-z]{1,}\-([А-ЯA-Z][\x27а-яa-z]{1,}|(оглы)|(кызы)))\040[А-ЯA-Z][\x27а-яa-z]{1,}(\040[А-ЯA-Z][\x27а-яa-z]{1,})?$/;
         let name = e.target.value;
         let valid = reg.test(name);
-        if (valid) {
+        if (valid && name.length <= 30) {
             setUseName(e.target.value)
             setUseNameValidate(true)
         } else {
@@ -112,14 +114,13 @@ const UserEditor = (props) => {
                                 style={{width: "254px"}}
                                 error={useNameValidate ? false : true}
                                 label="Фамилия и Имя"
-                                placeholder="Укажите ваши Фамилию и Имя"
+                                placeholder="Укажите ваши фамилию и имя"
                                 type="name"
                                 variant="outlined"
                                 name="name"
                                 helperText={useNameValidate ? "" : "Вы неверно указали имя"}
                                 onBlur={validatorName}
                             />
-
                         </div>
                         <div className={style.linearGradientLeft}></div>
                         <div className={style.formInput}>

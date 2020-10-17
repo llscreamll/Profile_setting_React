@@ -13,10 +13,10 @@ let AppContainer = () => {
     }
   }, []);
 
-  let [fullLame, setUserName] = useState("Иванова Анна Михайловна")
-  let [email, setEmail] = useState("Ivanova@mail.ru")
+  let [fullName, setUserName] = useState("Дроздов Никита")
+  let [email, setEmail] = useState("Drozdov@mail.ru")
   let [phone, setPhone] = useState("Укажите номер телефона")
-  let userName = fullLame.split(" ");
+  let userName = fullName.split(" ");
   let name = `${userName[0]} ${userName[1][0]}.`
 
   const [option, setOption] = useState(true)
@@ -49,7 +49,7 @@ let AppContainer = () => {
       <>
         <Container>
           <App name={name}
-               fullLame={fullLame}
+               fullName={fullName}
                phone={phone}
                option={option}
                editorProfile={editorProfile}

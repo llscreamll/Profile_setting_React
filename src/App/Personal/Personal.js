@@ -10,10 +10,10 @@ const Profile = (props) => {
         <>
             <div className={style.profile}>
                 <div className={style.userImages}>
-                    <img src={maskGroup} alt=""/>
+                    <img src={maskGroup} alt="UserImages"/>
                 </div>
                 <div className={style.userName}>
-                    <p>{props.fullLame}</p>
+                    <p>{props.fullName}</p>
                 </div>
 
                 <div className={style.edit}>

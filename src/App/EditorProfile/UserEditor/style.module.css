@@ -38,11 +38,17 @@
 .buttonForm{
     margin-top: 30px;
     margin-left: 540px;
-    width: 212px;
-    height: 49px;
+
 }
 .buttonForm button{
     background: #1EC3AF;
+    width: 212px;
+    height: 49px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
 }
 .buttonForm button:hover {
     background: #1EC3AF;
@@ -94,7 +100,8 @@
 
     .buttonForm{
         margin-top: -40px;
-        margin-left: 20px
+        margin-left: 45px;
+
     }
 
     .linearGradientRight{
