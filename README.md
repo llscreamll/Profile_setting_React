@@ -1,4 +1,5 @@
 https://llscreamll.github.io/Profile_setting_React/
+adaptive to iphone 5/se
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
